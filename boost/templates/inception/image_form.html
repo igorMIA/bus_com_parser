@@ -1,0 +1,11 @@
+<form action="{% url 'image_form' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="form-group">
+    <label>Image</label>
+    <input type="file" class="form-control-file" name="image" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% for image in images %}
+<img src="{{image.image.url}}" width="100">
+{% endfor %}

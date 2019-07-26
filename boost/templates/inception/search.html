@@ -1,0 +1,8 @@
+<form action="{% url 'search_api' 1 %}" method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label >Search</label>
+    <input name="query" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter search query" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
