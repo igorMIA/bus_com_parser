@@ -6,6 +6,9 @@ from bus_scrapy.settings import BOT_NAME, PARSER_NAME
 
 
 class Images(models.Model):
+    """
+    model for working with Image instance
+    """
     image = models.ImageField(upload_to='images/')
 
     def __str__(self):
@@ -13,6 +16,11 @@ class Images(models.Model):
 
     @staticmethod
     def add_img_border(raw_img):
+        """
+        function for adding border to image
+        :param raw_img:
+        :return:
+        """
         img = Image.open(io.BytesIO(raw_img.read()))
         img = img.convert('RGB')
         img = ImageOps.expand(img, border=10, fill='red')
@@ -23,6 +31,9 @@ class Images(models.Model):
 
 
 class BusStation(models.Model):
+    """
+    model for working with BusStation instance
+    """
     title = models.CharField(max_length=255)
     departure = models.DateTimeField()
     voyage = models.CharField(max_length=255)

@@ -13,7 +13,9 @@ chardet==3.0.4
 constantly==15.1.0
 cryptography==2.7
 cssselect==1.0.3
+defusedxml==0.6.0
 Django==2.2.3
+django-allauth==0.39.1
 djangorestframework==3.10.1
 elasticsearch==7.0.2
 flower==0.9.3
@@ -22,6 +24,7 @@ idna==2.8
 incremental==17.5.0
 kombu==4.6.3
 lxml==4.3.4
+oauthlib==3.0.2
 parsel==1.5.1
 Pillow==6.1.0
 psycopg2==2.8.3
@@ -31,11 +34,12 @@ pycparser==2.19
 PyDispatcher==2.0.5
 PyHamcrest==1.9.0
 pyOpenSSL==19.0.0
-python-dotenv==0.10.3
 python-scrapyd-api==2.1.2
+python3-openid==3.1.0
 pytz==2019.1
 queuelib==1.5.0
 requests==2.22.0
+requests-oauthlib==1.2.0
 Scrapy==1.7.1
 scrapyd==1.2.1
 scrapyd-client==1.1.0

@@ -7,10 +7,20 @@ class BusScrapyPipeline(object):
 
     @staticmethod
     def convert_data_time(value):
+        """
+        prepared date value for saving
+        :param value:
+        :return:
+        """
         return str(datetime.strptime(value, '%d.%m.%y %H:%M'))
 
     @staticmethod
     def try_float(value):
+        """
+        prepared float value for saving
+        :param value:
+        :return:
+        """
         value =  value.replace('\xa0', '')
         try:
             value = float(value)
@@ -20,6 +30,11 @@ class BusScrapyPipeline(object):
 
     @staticmethod
     def try_int(value):
+        """
+        prepared int value for saving
+        :param value:
+        :return:
+        """
         value = value.replace('\xa0', '')
         try:
             value = int(value)

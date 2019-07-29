@@ -22,6 +22,8 @@ from rest.views import BusStationView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+    path('auth/', include('django.contrib.auth.urls')),
     path('', include('inception.urls')),
     path('api/list/page-<int:page>', BusStationView.as_view(), name='search_api')
 ]

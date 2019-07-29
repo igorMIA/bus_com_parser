@@ -7,6 +7,8 @@ services:
     command: bash -c "python boost/manage.py makemigrations inception && python boost/manage.py migrate && python boost/manage.py runserver 0.0.0.0:8080"
     volumes:
       - .:/app
+    env_file:
+      .env
     ports:
       - 8080:8080
     depends_on:
@@ -27,11 +29,8 @@ services:
       - 15672:15672
     volumes:
       - ./data/rabbitmq:/var/lib/rabbitmq/mnesia/rabbit@app-rabbitmq:cached
-    environment:
-      RABBITMQ_ERLANG_COOKIE: 6085e2412b6fa88647466c6a81c0cea0
-      RABBITMQ_DEFAULT_USER: rabbitmq
-      RABBITMQ_DEFAULT_PASS: rabbitmq
-      RABBITMQ_DEFAULT_VHOST: /
+    env_file:
+      .env
   celery:
     image: django_boost
     working_dir: /app/boost
@@ -40,6 +39,8 @@ services:
       - 8888:8888
     volumes:
       - .:/app
+    env_file:
+      .env
     depends_on:
       - rabbitmq
   elasticsearch:
@@ -58,10 +59,10 @@ services:
       - 9200:9200
   kibana:
     image: docker.elastic.co/kibana/kibana:7.2.0
-    environment:
-      ELASTICSEARCH_URL: http://elasticsearch:9200/
     ports:
       - 5601:5601
+    env_file:
+      .env
     depends_on:
       - elasticsearch
   scrapyd:
@@ -80,3 +81,8 @@ services:
     depends_on:
       - scrapyd
     restart: on-failure
+  tests:
+    image: django_boost
+    command: bash -c "python boost/manage.py test tests"
+    volumes:
+      - .:/app
