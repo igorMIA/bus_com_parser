@@ -9,6 +9,12 @@ class ScraperAdmin(admin.ModelAdmin):
     list_display = ['job_id', 'status', 'created']
 
     def stop_scraper(self, request, queryset):
+        """
+        action for stoping selected scraper
+        :param request:
+        :param queryset:
+        :return:
+        """
         for spider in queryset:
             if spider.job_id:
                 scrapyd = ScrapydAPI('http://scrapyd:6800')

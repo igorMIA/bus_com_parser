@@ -40,9 +40,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'rest_framework',
-    'inception'
+    'allauth.socialaccount.providers.github',
+    'inception',
 ]
+
+SITE_ID = 2
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',)
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

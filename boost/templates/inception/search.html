@@ -1,3 +1,5 @@
+{% extends 'inception/base.html' %}
+{% block content %}
 <form action="{% url 'search_api' 1 %}" method="post">
     {% csrf_token %}
   <div class="form-group">
@@ -6,3 +8,4 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+{% endblock %}

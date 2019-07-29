@@ -1,3 +1,5 @@
+{% extends 'inception/base.html' %}
+{% block content %}
 <form action="{% url 'image_form' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
       <div class="form-group">
@@ -9,3 +11,4 @@
 {% for image in images %}
 <img src="{{image.image.url}}" width="100">
 {% endfor %}
+{% endblock %}

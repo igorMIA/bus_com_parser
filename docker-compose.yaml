@@ -80,3 +80,8 @@ services:
     depends_on:
       - scrapyd
     restart: on-failure
+  tests:
+    image: django_boost
+    command: bash -c "python boost/manage.py test tests"
+    volumes:
+      - .:/app

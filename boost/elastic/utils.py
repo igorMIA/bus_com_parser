@@ -1,9 +1,12 @@
 def escape_reserved_characters(query):
-    # Note:
-    # < and > can’t be escaped at all.
-    # The only way to prevent them from attempting
-    # to create a range query is to remove them from the query string entirely.
-
+    """
+    :param query:
+    :return: escaped query
+    Note:
+    < and > can’t be escaped at all.
+    The only way to prevent them from attempting
+    to create a range query is to remove them from the query string entirely.
+    """
     reserved_characters = ['+', '-', '=', '&&', '||', '!', '(', ')', '{', '}', '[', ']', '^', '"', '~',
                            '*', '?', ':', '\\', '/']
     s = list(query)

@@ -1,5 +1,7 @@
+{% extends 'inception/base.html' %}
+{% block content %}
 <ul>
-  <li><a href="">Add a bus station data</a> </li>
   <li><a href="{% url 'search_form' %}">Search form</a></li>
   <li><a href="{% url 'image_form' %}">Upload image</a></li>
 </ul>
+{% endblock %}
