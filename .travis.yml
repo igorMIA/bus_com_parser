@@ -2,6 +2,10 @@ services:
   - docker
   - postgresql
 
+env:
+  global:
+  - PGPORT=5433
+
 script:
   - mv .env.test .env
   - docker-compose build django
