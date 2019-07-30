@@ -88,5 +88,3 @@ services:
       .env
     volumes:
       - .:/app
-    depends_on:
-      - db
