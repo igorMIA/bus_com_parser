@@ -84,5 +84,7 @@ services:
   tests:
     image: django_boost
     command: bash -c "python boost/manage.py test tests"
+    env_file:
+      .env
     volumes:
       - .:/app
