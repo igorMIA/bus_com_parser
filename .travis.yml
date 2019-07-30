@@ -4,4 +4,5 @@ services:
 script:
   - mv .env.example .env
   - docker-compose build django
+  - docker-compse ps
   - docker-compose up tests
