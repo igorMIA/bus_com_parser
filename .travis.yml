@@ -3,6 +3,6 @@ services:
   - postgresql
 
 script:
-  - mv .env.example .env
+  - mv .env.test .env
   - docker-compose build django
   - docker-compose up tests
