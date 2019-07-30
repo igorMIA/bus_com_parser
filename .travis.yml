@@ -2,5 +2,6 @@ services:
   - docker
 
 script:
+  - mv .env.example .env
   - docker-compose build tests
-  - docker-compse run tests
+  - docker-compose run tests
