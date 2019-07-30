@@ -1,9 +1,9 @@
+[![Build Status](https://travis-ci.com/igorMIA/bus_com_parser.svg?branch=master)](https://travis-ci.com/igorMIA/bus_com_parser)
+
 BusComScraper
 =======
 
 BusComScraper with celery and elasticsearch project
-
-![Build Status](https://travis-ci.com/igorMIA/bus_com_parser.svg?branch=master)](https://travis-ci.com/igorMIA/bus_com_parser)
 
 :License: MIT
 
