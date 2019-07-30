@@ -1,8 +1,9 @@
 services:
   - docker
+  - postgresql
 
 before_script:
-  - sudo service postgresql stop
+  - psql -c 'create database postgres;' -U postgres
 
 script:
   - mv .env.example .env
