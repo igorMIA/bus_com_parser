@@ -2,11 +2,6 @@ services:
   - docker
   - postgresql
 
-before_script:
-  - sudo -u postgres psql
-  - \password postgres
-  - \q
-
 script:
   - mv .env.example .env
   - docker-compose build django
