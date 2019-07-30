@@ -1,6 +1,9 @@
 services:
   - docker
 
+before_script:
+  - sudo service postgresql stop
+
 script:
   - mv .env.example .env
   - docker-compose build django
